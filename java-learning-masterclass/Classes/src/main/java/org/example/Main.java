@@ -1,12 +1,24 @@
 package org.example;
 
 public class Main {
+
     public static void main(String[] args) {
-        Car car = new Car();
+        for (int i = 1; i <= 5; i++) {
+            Student s = new Student(
+                    "S92300" + i,
+                    switch (i) {
+                        case 1 -> "Mary";
+                        case 2 -> "Carol";
+                        case 3 -> "Tim";
+                        case 4 -> "Harry";
+                        case 5 -> "Lisa";
+                        default -> "Anonymous";
+                    },
+                    "05/11/1985",
+                    "Java Masterclass"
+            );
 
-//        car.describeCar();
-
-        System.out.println("Make: " + car.getMake());
-        System.out.println("Model: " + car.getModel());
+            System.out.println(s);
+        }
     }
 }
