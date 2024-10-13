@@ -1,25 +1,42 @@
 package org.example;
 
-class Dog {
-    private static String name;
+public class Dog extends Animal {
 
-    public Dog(String name) {
-        this.name = name;
+    private String earShape;
+    private String tailShape;
+
+    public Dog() {
+        super("Mutt", "Big", 50);
     }
 
-    public void printName() {
-        System.out.println("name = " + name);
+    public Dog(String type, double weight) {
+        this(type, weight, "Perky", "Curled");
+    }
+
+    public Dog(String type, double weight, String earShape, String tailShape) {
+        super(type, weight <  15 ? "small" : (weight < 35 ? "medium" : "large"),
+                weight);
+        this.earShape = earShape;
+        this.tailShape = tailShape;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "earShape='" + earShape + '\'' +
+                ", tailShape='" + tailShape + '\'' +
+                "} " + super.toString();
+    }
+
+    @Override
+    public void makeNoise() {
+        super.makeNoise();
+        System.out.println("Hi there");
+    }
+
+    @Override
+    public void move(String speed) {
+        super.move(speed);
+        System.out.println("Dogs walk, run and wag their tail");
     }
 }
-
-
-//    private String name;
-//
-//    public Dog(String name) {
-//        this.name = name;
-//    }
-//
-//    public void printName() {
-//        System.out.println("name = " + name);
-//    }
-//}
